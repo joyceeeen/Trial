@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>add address</title>
+
+  <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlbfgiXejCsBBpDWR3WedpCkdSNbS6ZXc">
+  </script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/map.js"></script>
+
+  <style>
+  #mapCanvas {
+    width: 500px;
+    height: 500px;
+    float: left;
+  }
+  #infoPanel {
+    float: left;
+    margin-left: 10px;
+  }
+  #infoPanel div {
+    margin-bottom: 5px;
+  }
+  </style>
+</head>
+
+  <body>
+    <div id="panel">
+      <input id="city_country" class="city_country" type="textbox">
+      <input type="button" value="Geocode" onclick="codeAddress()">
+    </div>
+    <div id="mapCanvas"></div>
+    <div id="infoPanel">
+      <b>Marker status:</b>
+      <div id="markerStatus"><i>Click and drag the marker.</i></div>
+      <b>Current position:</b>
+      <div id="info"></div>
+      <b>Closest matching address:</b>
+      <div>Country: <span id="country"></span></div>
+    <div>State: <span id="state"></span></div>
+    <div>City: <span id="city"></span></div>
+    <div>Postal: <span id="postal"></span></div>
+    <div>Latitude: <span id="latitude"></span></div>
+    <div>Longitude: <span id="longitude"></span></div>
+    <div>IP address: <span id="ipv4"></span></div>
+    </div>
+  </body>
+
+</html>

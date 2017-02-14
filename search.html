@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/search.js"></script>
+</head>
+
+<body>
+
+  <div class="search_bar">
+    <input id="resort" onkeyup="AutoComplete()">
+
+    <div class="dropdown" id="dropdown" >
+      <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Halfday- Day
+        <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a id = "halfday" href="#">Halfday- Day</a></li>
+          <li><a id = "halfday" href="#">Halfday - Night</a></li>
+          <li><a id = "whole" href="#">Wholeday</a></li>
+        </ul>
+      </div>
+
+      <div class="date">
+        <input id="FromDate"/>
+        <input id="ToDate"/>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">1-15 persons
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">1-15 persons</a></li>
+            <li><a href="#">1-20 persons</a></li>
+            <li><a href="#">1-25 persons</a></li>
+            <li><a href="#">1-30 persons</a></li>
+            <li><a href="#">1-40 persons</a></li>
+            <li><a href="#">1-50 persons</a></li>
+          </ul>
+        </div>
+
+        <div class="submit-btn">
+          <button type="button" class="btn btn-default">Search</button>
+        </div>
+      </div>
+    </body>
+    </html>
