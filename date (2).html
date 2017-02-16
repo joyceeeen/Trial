@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/calendar.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+  $("#FromDate").datepicker({
+      minDate: 0,
+      onSelect: function(dateText, inst) {
+          $("#ToDate").val($.datepicker.formatDate('m/d/yy', new Date(new Date(dateText).getTime() + 1*24*60*60*1000)));
+          $.datepicker.setDefaults({"defaultDate":dateText});
+      }
+  });
+
+  $("#ToDate").datepicker({
+    minDate: 0,
+    onSelect: function (dateText, inst) {
+    }
+  });
+});
+  </script>
+</head>
+<body>
+  <input  id="FromDate" />
+  <input id="ToDate" />
+</body>
+</html>
