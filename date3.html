@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/calendar.css">
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+
+    $("#FromDate").datepicker({
+      minDate: 0,
+      onSelect: function(dateText, inst) {
+        $("#ToDate").val($.datepicker.formatDate('m/d/yy', new Date(new Date(dateText).getTime() + 1*24*60*60*1000)));
+      },
+
+      onClose: function(dateText, inst) {
+        $("#ToDate").focus();
+      },
+      beforeShowDay: showSelected
+    });
+
+    $("#ToDate").datepicker({
+      minDate: 0,
+      onSelect: function (dateText, inst) {
+      },
+      beforeShowDay:  showSelected
+    });
+  });
+  function bookedDates(date){
+    var unavailableDates = ["28-2-2017", "26-2-2017", "27-2-2017"];
+    var dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+    if ($.inArray(dmy, unavailableDates) == -1) {
+      return [true, ""];
+    } else {
+      return [false, "", "unavailable"];
+    }
+  }
+  function showSelected(date){
+    var FromDate= $('#FromDate').val();
+    var ToDate= $('#ToDate').val();
+    var dates=[FromDate,ToDate];
+    for (var i = 0; i < dates.length; i++) {
+      if (new Date(dates[i]).toString().substr(0, 16) == date.toString().substr(0, 16)) {
+        return [true, 'highlight'];
+      }else{
+      return [true, ''];
+      }
+    }
+  }
+
+
+  </script>
+</head>
+<body>
+  <input  id="FromDate" />
+  <input id="ToDate" />
+</body>
+</html>

@@ -1,27 +1,71 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Select a Date Range</title>
+
+  <link rel="stylesheet" href="css/jquery-ui.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript">
-$(document).ready(function(){
-  $("#FromDate").datepicker({
-      onSelect: function(dateText, inst) {
-          $("#ToDate").val($.datepicker.formatDate('m/d/yy', new Date(new Date(dateText).getTime() + 1*24*60*60*1000)));
-          $.datepicker.setDefaults({"defaultDate":dateText});
-      }
-  });
 
-  $("#ToDate").datepicker({
-    onSelect: function (dateText, inst) {
-    }
+  $(document).ready(function(){
+    $(function() {
+      $(".rangepicker").datepicker({
+        minDate: 0,
+        beforeShow: function (input, inst) {
+          var rect = input.getBoundingClientRect();
+          setTimeout(function () {
+            inst.dpDiv.css({ top: rect.top + 40, left: rect.left + 0 });
+          }, 0);
+        },
+        beforeShowDay: function(date) {
+          var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
+          var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
+          var isHighlight = date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2));
+          return [true, isHighlight ? 'dp-highlight' : ""];
+        },
+        onSelect: function(dateText, inst) {
+          var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input1").val());
+          var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#input2").val());
+          var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+          if (!date1 || date2) {
+            $("#input1").val(dateText);
+            $("#input2").val("");
+          } else if (selectedDate < date1) {
+            $("#input2").val($("#input1").val());
+            $("#input1").val(dateText);
+          } else {
+            $("#input2").val(dateText);
+          }
+
+          $(this).data('datepicker').inline = true;
+          $(this).datepicker();
+        },
+        onClose: function() {
+          // Since we went inline as soon as the date input was clicked
+          // (to leave the datepicker up for both dates selection),
+          // turn inline back off again so date input click will once again
+          // display the datepicker
+          $(this).data('datepicker').inline = false;
+        }
+      });
+    });
   });
-});
   </script>
 </head>
 <body>
-  <input  id="FromDate" />
-  <input id="ToDate" />
+  <input type="text" id="input1_1" class="rangepicker" style="display: none">
+  <p>
+    Dates:
+    <label><b>To:</b></label>
+    <input type="text" id="input1" onclick="$('.rangepicker').datepicker('show');">
+    <label><b>From:</b></label>
+    <input type="text" id="input2" onclick="$('.rangepicker').datepicker('show');">
+    <button id="done">Done</button>
+  </p>
+
 </body>
 </html>
