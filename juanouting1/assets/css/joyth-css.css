@@ -1,0 +1,30 @@
+.parent-resort {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow:hidden;
+}
+.resort-img {
+    transition: all 1s ease;
+    background:url('../images/balinese/2.png') no-repeat;
+    background-position:center;
+    background-size:cover;
+    z-index: -1;
+    height: 398px;
+    margin-bottom: 50px;
+        overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+}
+.parent-resort:hover > .resort-img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+.slide {
+
+padding: 40px;
+  background: #FFF;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100px;
+}

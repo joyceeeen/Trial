@@ -1,0 +1,2 @@
+colors:
+text: #2c3e50
