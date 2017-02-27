@@ -33,23 +33,22 @@ ol.progress-tracker[data-steps="9"] li { width: 11%; }
 
 .progress-tracker .step {
     color: black;
-    border: 3px solid silver;
-    background-color: silver;
+    border: 4px solid #B0BEC5;
+    background-color: white;
     border-radius: 50%;
-    line-height: 1.2;
-    width: 1.2em;
-    height: 1.2em;
+    line-height: 2.7;
+    height: 45px;
+    width: 45px;
     display: inline-block;
     z-index: 0;
 }
 .progress-tracker .skip .step{
   color: black;
-  border: 3px solid red;
-  background-color: red;
+  border: 4px solid #81CE97;
   border-radius: 50%;
-  line-height: 1.2;
-  width: 1.2em;
-  height: 1.2em;
+  line-height: 2.7;
+  height: 45px;
+  width: 45px;
   display: inline-block;
   z-index: 0;
 }
@@ -66,11 +65,13 @@ ol.progress-tracker[data-steps="9"] li { width: 11%; }
 .progress-tracker .step:before {
     content: "";
     display: block;
-    background-color: silver;
+    background-color: #fff;
+    border-top: 2px solid #B0BEC5;
+    border-bottom: 2px solid #B0BEC5;
     height: 0.4em;
     width: 50%;
     position: absolute;
-    bottom: 0.6em;
+    bottom: 1.1em;
     left: 0;
     z-index: -1;
 }
@@ -78,11 +79,14 @@ ol.progress-tracker[data-steps="9"] li { width: 11%; }
 .progress-tracker .step:after {
     content: "";
     display: block;
-    background-color: silver;
+    background-color: #fff;
+    border-top: 2px solid #B0BEC5;
+    border-bottom: 2px solid #B0BEC5;
+    border-left: 0px;
     height: 0.4em;
+    bottom: 1.1em;
     width: 50%;
     position: absolute;
-    bottom: 0.6em;
     right: 0;
     z-index: -1;
 }
@@ -99,20 +103,23 @@ ol.progress-tracker[data-steps="9"] li { width: 11%; }
 .progress-tracker .done .step:before,
 .progress-tracker .done .step:after,
 .progress-tracker .active .step{
-    background-color: yellowgreen;
+  color: #FFF;
+  background: #0c95be;
 }
 .progress-tracker .skip .step,
 .progress-tracker .skip .step:before,
 .progress-tracker .skip .step:after,{
-background-color: red;
+background-color: #81CE97;
 }
 .progress-tracker .skip .step{
-  border: 3px solid red;
+  border: 4px solid #B0BEC5;
+
 }
 
 .progress-tracker .done .step,
 .progress-tracker .active .step {
-    border: 3px solid yellowgreen;
+    border: 4px solid #B0BEC5;
+
 }
 .container fieldset:not(.active){
 display: none;
