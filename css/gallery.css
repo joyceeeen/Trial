@@ -16,17 +16,15 @@ body {
   display: table;
   clear: both;
 }
-.thumbnail{
-margin: 10px;
-}
 
 .thumbnail .column > img{
   width: 100%;
 }
 .column {
   float: left;
-  width: 25%;
-
+  width: 20%;
+  cursor: pointer;
+    padding: 5px 5px 0px 0px;
 }
 
 
@@ -35,26 +33,60 @@ margin: 10px;
   display: none;
   position: fixed;
   z-index: 1;
-  padding-top: 100px;
+  padding-top: 40px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgba(000,000,000,.8);
-
 }
-
+.prev{
+left:-35px;
+}
+.next{
+right:-35px;
+}
 /* Modal Content */
 .modal-content {
   position: relative;
-  background-color: #fefefe;
   margin: auto;
-  padding: 0;
-  width: 50%;
-  max-width: 100%;
+  padding: 10px;
+  max-width: 55%;
 }
-
+@media(max-width:1199px){
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    max-width: 85%;
+  }
+  .modal {
+padding-top: 30%;
+  }
+}
+@media(max-width:992px){
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    max-width: 75%;
+  }
+  .modal {
+padding-top: 200px;
+  }
+}
+@media(max-width:767px){
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    max-width: 83%;
+  }
+  .modal {
+padding-top: 200px;
+  }
+}
 /* The Close Button */
 .close {
   color: white;
@@ -100,7 +132,6 @@ margin: 10px;
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
   border-radius: 3px 0 0 3px;
 }
 
