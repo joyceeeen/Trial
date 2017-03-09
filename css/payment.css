@@ -1,0 +1,57 @@
+.payment-methods{
+  width: 100%;
+  height: 150px;
+  background: #fff;
+  margin-top: 100px;
+  padding: 10px;
+}
+.center{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+ul.tabs li a, ul.tabs li p{
+  text-decoration: none;
+  margin-top: 15px;
+  color: #333;
+  font-weight: bold;
+}
+
+ul.tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
+}
+
+ul.tabs li{
+  background: none;
+  color: #222;
+  margin: 10px;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #333;
+
+}
+
+ul.tabs li.active{
+  background: #ededed;
+  color: #222;
+}
+
+.tab-content{
+  background: #fff;
+  padding: 15px;
+  margin-top: 15px;
+border: 1px solid #333;
+}
+
+.tab-content.active{
+  display: inherit;
+}
+
+.tab-content .tab:not(.active){
+  display: none;
+}

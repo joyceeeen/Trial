@@ -1,12 +1,4 @@
-/* progress-tracker Tracker v2 */
-ol.progress-tracker[data-steps="2"] li { width: 49%; }
-ol.progress-tracker[data-steps="3"] li { width: 33%; }
-ol.progress-tracker[data-steps="4"] li { width: 24%; }
-ol.progress-tracker[data-steps="5"] li { width: 19%; }
-ol.progress-tracker[data-steps="6"] li { width: 16%; }
-ol.progress-tracker[data-steps="7"] li { width: 14%; }
-ol.progress-tracker[data-steps="8"] li { width: 12%; }
-ol.progress-tracker[data-steps="9"] li { width: 11%; }
+
 
 .progress-tracker {
     width: 100%;
@@ -62,7 +54,7 @@ ol.progress-tracker[data-steps="9"] li { width: 11%; }
     opacity: 1;
 }
 
-.progress-tracker .step:before {
+.progress-tracker li:before {
     content: "";
     display: block;
     background-color: #fff;

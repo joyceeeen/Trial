@@ -20,6 +20,9 @@
   </div>
 
   <div id="myModal" class="modal">
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
     <span class="close cursor" onclick="closeModal()">&times;</span>
     <div class="modal-content">
 
@@ -38,8 +41,6 @@
         <img src="images/3.png" style="width:100%">
       </div>
 
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
       <div class="thumbnail-wrapper">
         <div class="thumbnail">
@@ -55,12 +56,19 @@
           <div class="column">
             <img class="demo" src="images/3.png" onclick="currentSlide(3)" alt="Mountains">
           </div>
+          <div class="column">
+            <img class="demo" src="images/3.png" onclick="currentSlide(3)" alt="Mountains">
+          </div>
+          <div class="column">
+            <img class="demo" src="images/3.png" onclick="currentSlide(3)" alt="Mountains">
+          </div>
 
         </div>
       </div>
 
 
     </div>
-
+    <a class="prev-thumbnail" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next-thumbnail" onclick="plusSlides(1)">&#10095;</a>
   </body>
   </html>
